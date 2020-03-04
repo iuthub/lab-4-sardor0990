@@ -1,7 +1,7 @@
 <?php 
-	$playlist = isset($_REQUEST["playlist"])?$_REQUEST["playlist"]:NULL;
-	$shuffle = isset($_REQUEST["shuffle"])?$_REQUEST["shuffle"]:NULL;
-	$bysize = isset($_REQUEST["bysize"])?$_REQUEST["bysize"]:NULL;
+	$playlist = isset($_REQUEST["playlist"])? $_REQUEST["playlist"]:NULL;
+	$shuffle = isset($_REQUEST["shuffle"])? $_REQUEST["shuffle"]:NULL;
+	$bysize = isset($_REQUEST["bysize"])? $_REQUEST["bysize"]:NULL;
 
 	function sizefile($size){
 		if($size>=0 && $size <=1023){
@@ -69,7 +69,7 @@
 			<ul id="musiclist">
 				<?php 
 					if(isset($playlist)){
-						$folder=file("songs/".$playlist,FILE_IGNORE_NEW_LINES);
+						$folder=file ("songs/".$playlist,FILE_IGNORE_NEW_LINES);
 					}else {
 						if($shuffle=="on"){
 							$folder = glob("songs/*");
@@ -78,15 +78,15 @@
 							$folder = glob("songs/*");
 							$folder = merge_sort($folder);
 						}else{
-							$folder = glob("songs/*");
+							$folder  = glob("songs/*");
 						}
 					}
-					foreach($folder as $filename) {
+					foreach($folder  as $filename) {
 						if (strstr($filename, ".mp3")) {
 							$text = basename($filename);
 							?>
 								<li class="mp3item"><a href="<?= "songs/".$text ?>">
-								<?= $text ?></a>(<?= sizefile(filesize("songs/".$text)) ?>)</li>
+								<?=  $text ?></a>(<?= sizefile(filesize("songs/".$text)) ?>)</li>
 							<?php 
 						} 
 						?>

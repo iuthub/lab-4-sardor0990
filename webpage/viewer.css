@@ -10,14 +10,14 @@ li:hover {
 
 body {
 	background-color:  #BBCCDD;
-	margin-left: 1em;
+	margin-left: 2em;
 }
 
 h1 {
 	color: #000066;
 	font-family: Fantasy;
 	font-size: 24pt;
-	margin-bottom: 0;
+	margin-bottom: 1;
 }
 
 h2 {
@@ -54,6 +54,6 @@ li {
 }
 
 ul {
-	margin-bottom: 0.5em;
+	margin-bottom: 0.7em;
 	margin-top: 0.5em;
 }
